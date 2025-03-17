@@ -4,7 +4,7 @@ import requests
 import openpyxl
 from openpyxl import Workbook
 
-API_KEY = '3f4f3f286f868b253c7bc95b5a2d8c29'
+API_KEY = 'apikey' #Please note that to run this program you will need your API key: https://the-odds-api.com/
 SPORT = 'upcoming'
 REGION = 'us'
 MARKETS = 'h2h'
