@@ -1,1 +1,1 @@
-# arbitrage-sports-betting-project
+# Arbitrage Method for Sports Betting
