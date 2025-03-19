@@ -5,9 +5,9 @@ import openpyxl
 from openpyxl import Workbook
 
 API_KEY = 'apikey' #Please note that to run this program you will need your API key: https://the-odds-api.com/
-SPORT = 'upcoming'
-REGION = 'us'
-MARKETS = 'h2h'
+SPORT = 'upcoming' # Shows next upcoming 8 matches across all sports
+REGION = 'us' #Can also be eu, au, or uk
+MARKETS = 'h2h' # Head to Head money-line bets
 FORMAT = 'decimal'
 CAPITAL = 100 #Total amount that you bet across all platforms
 
@@ -55,10 +55,11 @@ def find_arbitrage(events):
     
         if len(best_odds) < 2:
           continue
-
+        #Calculates the implied probability given odds
         implied_probs = {team: 1 / best_odds[team]['odds'] for team in best_odds}
         total_implied_prob = sum(implied_probs.values())
 
+        #This is where there is arbitrage
         if total_implied_prob < 1:
           bet_allocation = {}
           for team in best_odds:
